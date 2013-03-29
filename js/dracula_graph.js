@@ -269,7 +269,7 @@ Graph.Renderer.Raphael.prototype = {
       return;
     if(edge.source.hidden || edge.target.hidden) {
       edge.connection && edge.connection.fg.hide();
-      edge.connection.bg && edge.connection.bg.hide();
+      edge.connection && edge.connection.bg.hide();
       return;
     }
     /* if edge already has been drawn, only refresh the edge */
@@ -506,7 +506,7 @@ Graph.Layout.OrderedTree.prototype = {
             var file = counter - Math.pow(rank, 2);
             
             log('Node ' + node.id + '  #' + counter + ' is at rank ' + rank + ' file ' + file);
-            node.layoutPosX = totalLevels - rank;
+            node.layoutPosX = rank;
             node.layoutPosY = file;
             counter++;
         }
